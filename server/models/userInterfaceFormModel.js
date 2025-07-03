@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const graphicsDesignForm = new mongoose.Schema({
+const userInterfaceForm = new mongoose.Schema({
   name: String,
   email: String,
   phone : Number,
@@ -11,4 +11,4 @@ const graphicsDesignForm = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("graphics_form", graphicsDesignForm);
+module.exports = mongoose.model("user_interface_form", userInterfaceForm);

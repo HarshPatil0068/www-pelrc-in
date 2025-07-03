@@ -29,7 +29,7 @@ const sendMechEngRegForm = async (req, res) => {
     });
 
     // AJAX request
-    res.status(200).json({ message: "Message sent successfully" });
+    res.redirect('/mechanicalInternship?status=success');
   } catch (err) {
     console.error("Contact form error:", err);
     res.status(500).json({ message: "Something went wrong" });

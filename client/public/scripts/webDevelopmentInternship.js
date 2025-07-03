@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu');
     const mobileNav = document.querySelector('.mobile-nav');
@@ -47,67 +47,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form Submission Handling
-    const applicationForm = document.querySelector('.application-form');
-    
-    if (applicationForm) {
-        applicationForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-            
-            // Here you would typically send the data to your server
-            console.log('Application submitted:', data);
-            
-            // Show success message
-            alert('Thank you for your application! We will contact you soon.');
-            
-            // Reset form
-            this.reset();
-        });
-    }
+window.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const status = params.get("status");
+
+  if (status === "success") {
+    alert("Application sent! We'll get back to you soon.");
+  } else if (status === "error") {
+    alert("Something went wrong.");
+  }
+
+  if (status) {
+    // Remove query string without reloading
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
 });
-
-
-
-const form = document.querySelector("application-form");
-const flash = document.getElementById("flashMessage");
-
-  // ✅ Ensure flash message is hidden on page load
-  window.addEventListener("DOMContentLoaded", () => {
-    flash.classList.add("hidden");
-  });
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message"),
-    };
-
-    try {
-      const res = await fetch("/auth/api/send/web-dev-registration", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (res.ok) {
-        flash.classList.remove("hidden");
-        form.reset();
-        setTimeout(() => flash.classList.add("hidden"), 4000);
-      } else {
-        alert("Failed to send message.");
-      }
-    } catch (err) {
-      console.error("Error:", err);
-      alert("Something went wrong.");
-    }
-  });

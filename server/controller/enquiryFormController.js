@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
-const Contact = require("../models/inquiryFormModel");
+const Contact = require("../models/enquiryFormModel");
 
-const sendInquiryMessage = async (req, res) => {
+const sendEnquiryMessage = async (req, res) => {
   const { name, email, message } = req.body;
 
   try {
@@ -34,4 +34,4 @@ const sendInquiryMessage = async (req, res) => {
   }
 };
 
-module.exports = { sendInquiryMessage };
+module.exports = { sendEnquiryMessage };

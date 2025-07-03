@@ -24,12 +24,11 @@ const sendWebDevRegForm = async (req, res) => {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>phone:</strong> ${phone}</p>
         <p><strong>Preferred Date:</strong> ${preferredDate}</p>
-        <p><strong>Inquiry Message:</strong>I would like to register for this internship.<</p>
+        <p><strong>Inquiry Message:</strong>I would like to register for this <</p>
       `,
     });
 
-    // AJAX request
-    res.status(200).json({ message: "Message sent successfully" });
+    res.redirect("/webDevelopmentInternship?status=success");
   } catch (err) {
     console.error("Contact form error:", err);
     res.status(500).json({ message: "Something went wrong" });

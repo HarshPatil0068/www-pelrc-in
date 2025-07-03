@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
-const Contact = require("../models/graphicsDesignFormModel");
+const Contact = require("../models/userInterfaceFormModel");
 
-const sendGraphDesignerRegForm = async (req, res) => {
+const sendUserInterfaceRegForm = async (req, res) => {
   const { name, email, phone, message} = req.body;
 
   try {
@@ -18,7 +18,7 @@ const sendGraphDesignerRegForm = async (req, res) => {
     await transporter.sendMail({
       from: `<${email}>`,
       to: process.env.EMAIL_USER,
-      subject: `Graphics Designer Registration`,
+      subject: `Graphics Designer Registration${email}`,
       html: `
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
@@ -27,12 +27,11 @@ const sendGraphDesignerRegForm = async (req, res) => {
       `,
     });
 
-    // AJAX request
-    res.status(200).json({ message: "Message sent successfully" });
+    res.redirect('/userInterfaceInternship?status=success');
   } catch (err) {
     console.error("Contact form error:", err);
     res.status(500).json({ message: "Something went wrong" });
   }
 };
 
-module.exports = { sendGraphDesignerRegForm };
+module.exports = { sendUserInterfaceRegForm };

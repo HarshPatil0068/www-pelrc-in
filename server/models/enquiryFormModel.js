@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const inquirySchema = new mongoose.Schema({
+const enquirySchema = new mongoose.Schema({
   name: String,
   email: String,
   message: String,
@@ -10,4 +10,4 @@ const inquirySchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Inquiry", inquirySchema);
+module.exports = mongoose.model("enquiry", enquirySchema);

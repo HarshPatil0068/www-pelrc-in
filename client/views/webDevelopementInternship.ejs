@@ -178,23 +178,18 @@
             <h2 class="section-title">Ready to Start Your Journey?</h2>
             <p class="section-subtitle">Apply now for the next cohort starting soon</p>
             
-            <form class="application-form" data-animate method="post" action="/auth/api/send/web-dev-registration">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <input type="tel" placeholder="Phone Number" required>
-                <select required>
-                    <option value="">Preferred Start Date</option>
-                    <option>June 15, 2023</option>
-                    <option>July 1, 2023</option>
-                    <option>July 15, 2023</option>
-                </select>
-                <button type="submit" class="primary-button">Submit Application</button>
+            <form class="application-form" id="reg-form" method="post" action="/auth/api/send/web-dev-registration">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Email Address" required />
+            <input type="tel" name="phone" placeholder="Phone Number" required />
+            <select name="preferredDate" required>
+                <option value="">Preferred Start Date</option>
+                <option>June 15, 2023</option>
+                <option>July 1, 2023</option>
+                <option>July 15, 2023</option>
+            </select>
+            <button type="submit" class="primary-button">Submit Application</button>
             </form>
-            <!-- Flash message -->
-                    <div id="flashMessage"
-                        class="bg-yellow-100 border border-yellow-400 text-yellow-800 text-center font-semibold px-6 py-3 rounded-md mt-4 hidden shadow-md">
-                        Message sent successfully!
-                    </div>
         </div>
     </section>
 
@@ -212,6 +207,6 @@
     </footer>
 
     <!-- Main JavaScript -->
-    <script src="./scripts/webDevelopmentInternships.ejs"></script>
+    <script src="./scripts/webDevelopmentInternship.js"></script>
 </body>
 </html>

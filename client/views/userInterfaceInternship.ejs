@@ -149,31 +149,24 @@
         <div class="container">
             <h2 class="section-title">Ready to Apply?</h2>
             <p class="section-subtitle">Fill out the form below to take the first step towards your UI/UX career.</p>
-            <form class="uiux-application-form application-form" method="post" action="/auth/api/send/graphics-designer-registration">
+            <form class="uiux-application-form application-form" method="post" action="/auth/api/user-interface-registration">
                 <div class="uiux-form-group">
-                    <input type="text" id="fullName" placeholder=" " required>
+                    <input type="text" id="fullName" placeholder=" " name="name" required>
                     <label for="fullName">Full Name</label>
                 </div>
                 <div class="uiux-form-group">
-                    <input type="email" id="email" placeholder=" " required>
+                    <input type="email" id="email" name="email" placeholder=" " required>
                     <label for="email">Email Address</label>
                 </div>
                 <div class="uiux-form-group">
-                    <input type="tel" id="phone" placeholder=" ">
+                    <input type="tel" id="phone" placeholder=" " name="phone">
                     <label for="phone">Phone Number</label>
                 </div>
                 <div class="uiux-form-group full-width">
-                    <textarea id="interest" placeholder=" "></textarea>
+                    <textarea id="interest" placeholder=" " name="message"></textarea>
                     <label for="interest">Why are you interested in this program?</label>
                 </div>
                 <button type="submit" class="primary-button" style="width: 100%;">Submit Application</button>
-            </form>
-            <!-- Flash message -->
-                    <div id="flashMessage"
-                        class="bg-yellow-100 border border-yellow-400 text-yellow-800 text-center font-semibold px-6 py-3 rounded-md mt-4 hidden shadow-md">
-                        Message sent successfully!
-                    </div>
-        </div>
     </section>
 
     <!-- Footer with navigation links -->

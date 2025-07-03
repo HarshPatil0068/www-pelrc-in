@@ -8,10 +8,10 @@ const dotenv = require('dotenv');
 dotenv.config(); // loads variables from your .env file into process.env.
 const dbConnection = require('./config/db.js');
 const {registerUser, loginUser} = require('./controller/userController.js');
-const { sendInquiryMessage } = require('./controller/inquiryFormController.js')
+const { sendEnquiryMessage } = require('./controller/enquiryFormController.js')
 const { sendWebDevRegForm } = require('./controller/webDevelopmentFormController.js')
 const { sendMechEngRegForm } = require('./controller/mechanicalEngineeringFormController.js')
-const { sendGraphDesignerRegForm } = require('./controller/graphicsDesignFormController.js')
+const { sendUserInterfaceRegForm } = require('./controller/userInterfaceFormController.js')
 const checkUser = require('./middleware/authUser.js')
 
 
@@ -58,10 +58,10 @@ app.get('/auth', (req, res) => {
 
 app.post('/auth/api/register', registerUser);
 app.post('/auth/api/login', loginUser);
-app.post('/auth/api/send/inquiry', sendInquiryMessage);
+app.post('/auth/api/send/inquiry', sendEnquiryMessage);
 app.post('/auth/api/send/web-dev-registration', sendWebDevRegForm);
 app.post('/auth/api/send/mech-eng-registration', sendMechEngRegForm);
-app.post('/auth/api/graphics-designer-registration', sendGraphDesignerRegForm);
+app.post('/auth/api/user-interface-registration', sendUserInterfaceRegForm);
 
 
 
