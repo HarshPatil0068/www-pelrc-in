@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PELRC | Authentication</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#D4AF37",
+              "primary-dark": "#B7950B",
+              dark: "#222222",
+              light: "#F8F8F8",
+              glass: "rgba(248, 248, 248, 0.1)",
+            },
+            backdropBlur: {
+              xs: "2px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #111111 0%, #222222 100%);
+      }
+
+      .auth-container {
+        backdrop-filter: blur(8px);
+        background: rgba(34, 34, 34, 0.8);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .form-input {
+        background: rgba(248, 248, 248, 0.05);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        color: #f8f8f8;
+      }
+
+      .form-input:focus {
+        border-color: rgba(212, 175, 55, 0.5);
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+      }
+
+      .form-input::placeholder {
+        color: rgba(248, 248, 248, 0.5);
+      }
+
+      .tab-button {
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .tab-button::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 3px;
+        background: #d4af37;
+        transition: width 0.3s ease;
+      }
+
+      .tab-button.active {
+        color: #d4af37;
+        font-weight: 600;
+      }
+
+      .tab-button.active::after {
+        width: 80%;
+      }
+
+      .toggle-password {
+        transition: all 0.3s ease;
+      }
+
+      .toggle-password:hover {
+        color: #d4af37;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-md rounded-2xl overflow-hidden auth-container">
+      <!-- Tab Navigation -->
+      <div class="flex">
+        <button
+          id="login-tab"
+          class="flex-1 py-5 font-medium text-gray-300 tab-button <%= activeForm === 'login' ? 'active' : '' %>"
+        >
+          Sign In
+        </button>
+        <button
+          id="register-tab"
+          class="flex-1 py-5 font-medium text-gray-300 tab-button <%= activeForm === 'register' ? 'active' : '' %>"
+        >
+          Register
+        </button>
+      </div>
+
+      <!-- Login Form -->
+      <div id="login-form" class="p-8">
+        <form class="space-y-6" action="/auth/api/login" method="POST">
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-300">Email</label>
+            <input
+              type="email"
+              name="email"
+              required
+              class="w-full px-4 py-3 rounded-lg form-input focus:outline-none"
+            />
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-300"
+              >Password</label
+            >
+            <div class="relative">
+              <input
+                type="password"
+                name="password"
+                required
+                class="w-full px-4 py-3 rounded-lg form-input focus:outline-none pr-10"
+                placeholder="••••••••"
+              />
+              <i
+                class="fas fa-eye absolute right-3 top-3.5 text-gray-400 cursor-pointer toggle-password"
+              ></i>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <div class="flex items-center">
+              <input
+                id="remember"
+                type="checkbox"
+                class="h-4 w-4 rounded form-input text-primary focus:ring-primary"
+              />
+              <label for="remember" class="ml-2 block text-sm text-gray-400"
+                >Remember me</label
+              >
+            </div>
+            <a
+              href="#"
+              class="text-sm text-primary hover:text-primary-dark transition"
+              >Forgot password?</a
+            >
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-primary text-dark py-3.5 rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-primary/30"
+          >
+            Sign In
+          </button>
+        </form>
+
+        <div class="mt-6">
+          <div class="relative">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-gray-700"></div>
+            </div>
+            <div class="relative flex justify-center text-sm">
+              <span class="px-2 bg-transparent text-gray-400"
+                >Or continue with</span
+              >
+            </div>
+          </div>
+
+          <div class="mt-6 grid grid-cols-2 gap-3">
+            <a
+              href="#"
+              class="flex items-center justify-center py-2.5 px-4 rounded-lg form-input hover:bg-gray-800 transition"
+            >
+              <i class="fab fa-google text-red-500 mr-2"></i>
+              <span class="text-sm font-medium text-gray-300">Google</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center justify-center py-2.5 px-4 rounded-lg form-input hover:bg-gray-800 transition"
+            >
+              <i class="fab fa-github text-gray-300 mr-2"></i>
+              <span class="text-sm font-medium text-gray-300">GitHub</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Register Form -->
+      <div id="register-form" class="p-8 hidden">
+        <form class="space-y-6" action="/auth/api/register" method="POST">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-2">
+              <label class="block text-sm font-medium text-gray-300"
+                >Full Name</label
+              >
+              <input
+                type="text"
+                name="name"
+                required
+                class="w-full px-4 py-3 rounded-lg form-input focus:outline-none"
+              />
+            </div>
+
+            <div class="space-y-2">
+              <label class="block text-sm font-medium text-gray-300"
+                >Location</label
+              >
+              <input
+                type="text"
+                name="location"
+                required
+                class="w-full px-4 py-3 rounded-lg form-input focus:outline-none"
+              />
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-300"
+              >Contact Number</label
+            >
+            <input
+              type="tel"
+              name="contactNo"
+              required
+              minlength="10"
+              maxlength="12"
+              class="w-full px-4 py-3 rounded-lg form-input focus:outline-none"
+              pattern="[0-9]{10,12}"
+            />
+            <p class="text-xs text-gray-500 mt-1">10-12 digits only</p>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-300">Email</label>
+            <input
+              type="email"
+              name="email"
+              required
+              class="w-full px-4 py-3 rounded-lg form-input focus:outline-none"
+            />
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-300"
+              >Password</label
+            >
+            <div class="relative">
+              <input
+                type="password"
+                name="password"
+                required
+                minlength="7"
+                class="w-full px-4 py-3 rounded-lg form-input focus:outline-none pr-10"
+                placeholder="••••••••"
+              />
+              <i
+                class="fas fa-eye absolute right-3 top-3.5 text-gray-400 cursor-pointer toggle-password"
+              ></i>
+            </div>
+            <p class="text-xs text-gray-500 mt-1">Minimum 7 characters</p>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-primary text-dark py-3.5 rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-primary/30"
+          >
+            Create Account
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Get the initial active form from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialForm = urlParams.get("form") || "login";
+
+      // Initialize the correct form
+      if (initialForm === "register") {
+        document.getElementById("register-tab").classList.add("active");
+        document.getElementById("login-tab").classList.remove("active");
+        document.getElementById("login-form").classList.add("hidden");
+        document.getElementById("register-form").classList.remove("hidden");
+      }
+
+      // Toggle between login and register forms
+      const loginTab = document.getElementById("login-tab");
+      const registerTab = document.getElementById("register-tab");
+      const loginForm = document.getElementById("login-form");
+      const registerForm = document.getElementById("register-form");
+
+      loginTab.addEventListener("click", () => {
+        loginTab.classList.add("active");
+        registerTab.classList.remove("active");
+        loginForm.classList.remove("hidden");
+        registerForm.classList.add("hidden");
+      });
+
+      registerTab.addEventListener("click", () => {
+        registerTab.classList.add("active");
+        loginTab.classList.remove("active");
+        registerForm.classList.remove("hidden");
+        loginForm.classList.add("hidden");
+      });
+
+      // Password visibility toggle
+      document.querySelectorAll(".toggle-password").forEach((icon) => {
+        icon.addEventListener("click", function () {
+          const input = this.previousElementSibling;
+          const type =
+            input.getAttribute("type") === "password" ? "text" : "password";
+          input.setAttribute("type", type);
+          this.classList.toggle("fa-eye");
+          this.classList.toggle("fa-eye-slash");
+        });
+      });
+    </script>
+  </body>
+</html>

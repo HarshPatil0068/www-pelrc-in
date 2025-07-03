@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PELRC | Web Development Internship</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./styles/webDevelopmentInternship.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <!-- Tailwind css  -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="container">
+                <a href="/" class="logo">PELRC</a>
+                <div class="nav-links">
+                
+                    <div class="auth-buttons">
+                        <% if (isLoggedIn) { %>
+                        <button class="login-button">Account</button>
+                        <button class="signup-button">Logout</a></button>
+                    <% } else { %>
+                    <button class="login-button"
+                        onclick="window.location.href='/auth/?form=login';">Sign
+                        In</button>
+                    <button class="signup-button"
+                        onclick="window.location.href='/auth?form=regisister';">Register</button>
+                    <% } %>
+                </div>
+            </div>
+            <div class="mobile-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation (hidden by default) -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#internships">Internships</a>
+            <a href="index.html#workshops">Workshops</a>
+            <a href="index.html#about">About</a>
+            <a href="#apply" class="mobile-cta">Apply Now</a>
+        </div>
+    </div>
+
+    <!-- Hero Section with background image and animated text -->
+    <section class="internship-hero">
+        <div class="internship-hero-content">
+            <h1 data-animate class="text-white">Web Development Internship</h1>
+            <p class="internship-subtitle" data-animate>Launch your career in tech with hands-on experience</p>
+            <a href="#apply" class="primary-button" data-animate data-animate-delay="0.2">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- Internship Details Section with cards -->
+    <section class="internship-details">
+        <div class="container">
+            <h2 class="section-title">Internship Details</h2>
+            <p class="section-subtitle">A comprehensive 2-week program designed to give you real-world web development experience</p>
+            
+            <div class="details-grid">
+                <!-- Duration Card -->
+                <div class="detail-card" data-animate>
+                    <h3><i class="fas fa-calendar-alt"></i> Duration & Schedule</h3>
+                    <p>2-week intensive program with structured learning and hands-on practice:</p>
+                    <ul>
+                        <li>Week 1: 2 days online sessions + 3 days hands-on tasks</li>
+                        <li>Week 2: Mini project with mentor review</li>
+                        <li>Daily support from industry mentors</li>
+                    </ul>
+                </div>
+                
+                <!-- Experience Card -->
+                <div class="detail-card" data-animate data-animate-delay="0.2">
+                    <h3><i class="fas fa-laptop-code"></i> Real-World Experience</h3>
+                    <p>This isn't just theory - you'll work on practical projects:</p>
+                    <ul>
+                        <li>Build and deploy a portfolio website</li>
+                        <li>Collaborate with peers on coding challenges</li>
+                        <li>Receive personalized feedback on your work</li>
+                        <li>Certificate upon successful completion</li>
+                    </ul>
+                </div>
+                
+                <!-- Outcomes Card -->
+                <div class="detail-card" data-animate data-animate-delay="0.4">
+                    <h3><i class="fas fa-medal"></i> What You'll Gain</h3>
+                    <p>By the end of this internship, you'll have:</p>
+                    <ul>
+                        <li>Hands-on coding experience for your resume</li>
+                        <li>A portfolio project to showcase</li>
+                        <li>Mentorship from industry professionals</li>
+                        <li>Improved problem-solving and teamwork skills</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section with discount badge -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Pricing</h2>
+            <p class="section-subtitle">Quality education at an affordable price</p>
+            
+            <div class="price-container" data-animate>
+                <div class="offer-badge">Limited Offer</div>
+                <h3>Web Development Internship</h3>
+                <div class="price-tag">
+                    <span class="original-price">₹4999</span>
+                    ₹1999
+                </div>
+                <p class="urgency-text">Only 15 spots available for next cohort</p>
+                <a href="#apply" class="primary-button">Secure Your Spot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section with learning outcomes -->
+    <section class="curriculum-section">
+        <div class="container">
+            <h2 class="section-title">What You'll Learn</h2>
+            <p class="section-subtitle">Comprehensive curriculum covering essential web development skills</p>
+            
+            <div class="curriculum-grid">
+                <!-- HTML -->
+                <div class="curriculum-item" data-animate>
+                    <h3><i class="fab fa-html5"></i> HTML Fundamentals</h3>
+                    <p>Learn to structure web content with semantic HTML5 elements and best practices.</p>
+                </div>
+                
+                <!-- CSS -->
+                <div class="curriculum-item" data-animate data-animate-delay="0.1">
+                    <h3><i class="fab fa-css3-alt"></i> CSS & Responsive Design</h3>
+                    <p>Master modern CSS techniques including Flexbox, Grid, and media queries.</p>
+                </div>
+                
+                <!-- JavaScript -->
+                <div class="curriculum-item" data-animate data-animate-delay="0.2">
+                    <h3><i class="fab fa-js"></i> JavaScript Basics</h3>
+                    <p>Learn core programming concepts and DOM manipulation.</p>
+                </div>
+                
+                <!-- Git -->
+                <div class="curriculum-item" data-animate data-animate-delay="0.3">
+                    <h3><i class="fab fa-git-alt"></i> Git & GitHub</h3>
+                    <p>Version control fundamentals and collaboration workflows.</p>
+                </div>
+                
+                <!-- Deployment -->
+                <div class="curriculum-item" data-animate data-animate-delay="0.4">
+                    <h3><i class="fas fa-cloud-upload-alt"></i> Deployment</h3>
+                    <p>Learn to deploy your websites using modern hosting platforms.</p>
+                </div>
+                
+                <!-- Soft Skills -->
+                <div class="curriculum-item" data-animate data-animate-delay="0.5">
+                    <h3><i class="fas fa-users"></i> Professional Skills</h3>
+                    <p>Develop communication, teamwork, and problem-solving abilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Section with form -->
+    <section id="apply" class="application-section">
+        <div class="container">
+            <h2 class="section-title">Ready to Start Your Journey?</h2>
+            <p class="section-subtitle">Apply now for the next cohort starting soon</p>
+            
+            <form class="application-form" data-animate method="post" action="/auth/api/send/web-dev-registration">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option value="">Preferred Start Date</option>
+                    <option>June 15, 2023</option>
+                    <option>July 1, 2023</option>
+                    <option>July 15, 2023</option>
+                </select>
+                <button type="submit" class="primary-button">Submit Application</button>
+            </form>
+            <!-- Flash message -->
+                    <div id="flashMessage"
+                        class="bg-yellow-100 border border-yellow-400 text-yellow-800 text-center font-semibold px-6 py-3 rounded-md mt-4 hidden shadow-md">
+                        Message sent successfully!
+                    </div>
+        </div>
+    </section>
+
+   <!-- Footer with navigation links -->
+    <footer class="page-footer">
+        <div class="container">
+            <p>&copy; 2023 PELRC. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#internships">Internships</a>
+                <a href="index.html#workshops">Workshops</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="./scripts/webDevelopmentInternships.ejs"></script>
+</body>
+</html>

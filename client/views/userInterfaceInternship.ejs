@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PELRC | UI/UX Design Internship</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/userInterfaceInternship.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+            <div class="container">
+                <a href="/" class="logo">PELRC</a>
+                <div class="nav-links">
+                
+                    <div class="auth-buttons">
+                        <% if (isLoggedIn) { %>
+                        <button class="login-button">Account</button>
+                        <button class="signup-button">Logout</a></button>
+                    <% } else { %>
+                    <button class="login-button"
+                        onclick="window.location.href='/auth/?form=login';">Sign
+                        In</button>
+                    <button class="signup-button"
+                        onclick="window.location.href='/auth?form=regisister';">Register</button>
+                    <% } %>
+                </div>
+            </div>
+            <div class="mobile-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#internships">Internships</a>
+            <a href="index.html#workshops">Workshops</a>
+            <a href="index.html#about">About</a>
+            <a href="#apply" class="mobile-cta">Apply Now</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="uiux-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="text-white">UI/UX Design Internship</h1>
+                <p class="subtitle">Master user-centered design with industry professionals</p>
+                <a href="#apply" class="primary-button">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Highlights -->
+    <section class="program-highlights">
+        <div class="container">
+            <h2 class="section-title">Program Highlights</h2>
+            <div class="uiux-highlights-grid">
+                <div class="uiux-highlight-card">
+                    <i class="fas fa-user-friends"></i>
+                    <h3>User Research</h3>
+                    <p>Learn to conduct effective user interviews and analyze data</p>
+                </div>
+                <div class="uiux-highlight-card">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <h3>Wireframing & Prototyping</h3>
+                    <p>Create low and high fidelity prototypes using modern tools</p>
+                </div>
+                <div class="uiux-highlight-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>UI Design & Systems</h3>
+                    <p>Master visual design principles and design systems</p>
+                </div>
+                <div class="uiux-highlight-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Usability Testing</h3>
+                    <p>Validate designs through structured testing methods</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="curriculum">
+        <div class="container">
+            <h2 class="section-title">Curriculum</h2>
+            <div class="uiux-week-container">
+                <div class="uiux-week-card">
+                    <h3>Week 1-4: Foundations</h3>
+                    <ul>
+                        <li>Design thinking process</li>
+                        <li>User personas & journey maps</li>
+                        <li>Information architecture</li>
+                        <li>Figma basics</li>
+                    </ul>
+                </div>
+                <div class="uiux-week-card">
+                    <h3>Week 5-8: Intermediate</h3>
+                    <ul>
+                        <li>Interaction design principles</li>
+                        <li>Design systems</li>
+                        <li>Accessibility standards</li>
+                        <li>Prototyping techniques</li>
+                    </ul>
+                </div>
+                <div class="uiux-week-card">
+                    <h3>Week 9-12: Advanced</h3>
+                    <ul>
+                        <li>Advanced prototyping</li>
+                        <li>User testing methods</li>
+                        <li>Portfolio preparation</li>
+                        <li>Client project</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="uiux-pricing-section">
+        <div class="container">
+            <h2 class="section-title">Pricing</h2>
+            <p class="section-subtitle">Quality education at an affordable price</p>
+            
+            <div class="uiux-price-container">
+                <div class="uiux-offer-badge">Limited Seats</div>
+                <h3>UI/UX Design Internship</h3>
+                <div class="uiux-price-tag">
+                    <span style="text-decoration: line-through; color: #6c757d; margin-right: 15px; font-size: 1.5rem;">₹8999</span>
+                    ₹3999
+                </div>
+                <p style="color: #6c757d; font-size: 0.9rem; margin-bottom: 20px;">Only 12 spots available for next cohort</p>
+                <a href="#apply" class="primary-button">Secure Your Spot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Section -->
+    <section id="apply" class="application">
+        <div class="container">
+            <h2 class="section-title">Ready to Apply?</h2>
+            <p class="section-subtitle">Fill out the form below to take the first step towards your UI/UX career.</p>
+            <form class="uiux-application-form application-form" method="post" action="/auth/api/send/graphics-designer-registration">
+                <div class="uiux-form-group">
+                    <input type="text" id="fullName" placeholder=" " required>
+                    <label for="fullName">Full Name</label>
+                </div>
+                <div class="uiux-form-group">
+                    <input type="email" id="email" placeholder=" " required>
+                    <label for="email">Email Address</label>
+                </div>
+                <div class="uiux-form-group">
+                    <input type="tel" id="phone" placeholder=" ">
+                    <label for="phone">Phone Number</label>
+                </div>
+                <div class="uiux-form-group full-width">
+                    <textarea id="interest" placeholder=" "></textarea>
+                    <label for="interest">Why are you interested in this program?</label>
+                </div>
+                <button type="submit" class="primary-button" style="width: 100%;">Submit Application</button>
+            </form>
+            <!-- Flash message -->
+                    <div id="flashMessage"
+                        class="bg-yellow-100 border border-yellow-400 text-yellow-800 text-center font-semibold px-6 py-3 rounded-md mt-4 hidden shadow-md">
+                        Message sent successfully!
+                    </div>
+        </div>
+    </section>
+
+    <!-- Footer with navigation links -->
+    <footer class="page-footer">
+        <div class="container">
+            <p>&copy; 2023 PELRC. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#internships">Internships</a>
+                <a href="index.html#workshops">Workshops</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="./scripts/userInterfaceInternship.js"></script>
+</html>

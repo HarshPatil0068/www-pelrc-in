@@ -1,0 +1,301 @@
+ /* UI/UX Page Specific Styles (Namespaced) */
+        :root {
+            --uiux-primary: #D4AF37;
+            --uiux-primary-light: rgba(212, 175, 55, 0.15);
+            --uiux-dark: #1a1a1a;
+            --uiux-light: #f9f9f9;
+            --uiux-accent: #6E5BDB;
+        }
+
+        .uiux-hero {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .uiux-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 75% 30%, var(--uiux-primary-light) 0%, transparent 50%);
+        }
+
+        .uiux-hero .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .uiux-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            color: white;
+        }
+
+        .uiux-highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .uiux-highlight-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .uiux-highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .uiux-highlight-card i {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, var(--uiux-primary), var(--uiux-accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .uiux-week-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .uiux-week-card {
+            background: white;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 2;
+        }
+
+        .uiux-week-card h3 {
+            color: var(--uiux-primary);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .uiux-week-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .uiux-week-card li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .uiux-week-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--uiux-primary);
+        }
+
+        .uiux-pricing-section {
+            background-color: var(--uiux-light);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .uiux-price-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--uiux-primary-light);
+        }
+
+        .uiux-price-tag {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--uiux-primary);
+            margin: 20px 0;
+        }
+
+        .uiux-offer-badge {
+            position: absolute;
+            top: 20px;
+            right: -50px;
+            background-color: #28a745;
+            color: white;
+            padding: 5px 50px;
+            transform: rotate(45deg);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .uiux-application-form {
+            max-width: 700px;
+            margin: 0 auto;
+            margin-top: 60px;
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .uiux-form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .uiux-form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .uiux-form-group input,
+        .uiux-form-group textarea {
+            width: 100%;
+            padding: 18px 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .uiux-form-group input:focus,
+        .uiux-form-group textarea:focus {
+            outline: none;
+            border-color: var(--uiux-primary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .uiux-form-group textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        /* Floating Label Effect */
+        .uiux-form-group label {
+            position: absolute;
+            left: 25px;
+            top: 18px;
+            color: #6c757d;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            padding: 0 5px;
+        }
+
+        .uiux-form-group input:focus + label,
+        .uiux-form-group textarea:focus + label,
+        .uiux-form-group input:not(:placeholder-shown) + label,
+        .uiux-form-group textarea:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 15px;
+            font-size: 0.8rem;
+            color: var(--uiux-primary);
+            background: white;
+        }
+
+        .uiux-form-group input:not(:placeholder-shown),
+        .uiux-form-group textarea:not(:placeholder-shown) {
+            padding-top: 25px;
+            padding-bottom: 10px;
+        }
+
+        /* Footer Styles */
+.page-footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.footer-links a {
+    opacity: 0.8;
+    transition: var(--transition);
+    position: relative;
+}
+
+.footer-links a::after { /* Underline on hover */
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: var(--primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: var(--primary);
+}
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .uiux-week-card {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .uiux-hero {
+                padding: 120px 0 80px;
+                min-height: 500px;
+            }
+            
+            .uiux-application-form {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .uiux-highlight-card {
+                padding: 30px 20px;
+            }
+            
+            .uiux-week-card {
+                padding: 25px;
+            }
+            
+            .uiux-application-form {
+                padding: 25px 20px;
+            }
+        }
