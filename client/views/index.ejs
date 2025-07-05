@@ -1,82 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PELRC | Internships & Workshops</title>
-        <!-- Font Awesome -->
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <!-- Google Fonts -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-            rel="stylesheet">
-        <!-- Main CSS -->
-        <link rel="stylesheet" href="./styles/styles.css">
-        <!-- Tailwind css  -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    </head>
-    <body>
-        <!-- Premium Preloader Animation -->
-        <div class="preloader">
-            <div class="particles" id="particles-js"></div>
-            <div class="preloader-content">
-                <span class="preloader-text">PELRC</span>
-                <div class="preloader-subtext">Empowering Careers Through
-                    Providing opportunities</div>
-            </div>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PELRC | Internships & Workshops</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./styles/styles.css">
+    <!-- Tailwind css  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
 
-        <!-- Navigation Bar -->
-        <nav class="navbar">
-            <div class="container">
-                <a href="/" class="logo">PELRC</a>
-                <div class="nav-links">
-                    <a href="#services">Technical Manuals</a>
-                    <a href="#internships">Internships</a>
-                    <a href="#workshops">Workshops</a>
-                    <a href="/about">About</a>
-                    <!-- <div class="auth-buttons">
-                    <a href="login.html" class="login-button">Login</a>
-                    <a href="signup.html" class="signup-button">Sign Up</a>
-                </div> -->
-                    <div class="auth-buttons">
-                        <% if (isLoggedIn) { %>
+<body>
+    <!-- Premium Preloader Animation -->
+    <div class="preloader">
+        <div class="particles" id="particles-js"></div>
+        <div class="preloader-content">
+            <span class="preloader-text">PELRC</span>
+            <div class="preloader-subtext">Empowering Careers Through
+                Providing opportunities</div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">PELRC</a>
+            <div class="nav-links">
+                <a href="#services">Technical Manuals</a>
+                <a href="#internships">Internships</a>
+                <a href="#workshops">Workshops</a>
+                <a href="/about">About</a>
+                <div class="auth-buttons">
+                    <% if (isLoggedIn) { %>
                         <button class="login-button">Account</button>
-                        <button class="signup-button">Logout</a></button>
+                        <button class="signup-button" onclick="window.location.href='/logout'">Logout</a></button>
                     <% } else { %>
-                    <button class="login-button"
-                        onclick="window.location.href='/auth/?form=login';">Sign
-                        In</button>
-                    <button class="signup-button"
-                        onclick="window.location.href='/auth?form=regisister';">Register</button>
+                        <button class="login-button" onclick="window.location.href='/auth/?form=login';">Sign In</button>
+                        <button class="signup-button" onclick="window.location.href='/auth?form=register';">Register</button>
                     <% } %>
                 </div>
             </div>
+
+            <!-- Hidden Mobile Menu. -->
             <div class="mobile-menu">
                 <img src="./images/hamburger.svg" alt="Open Menu" class="w-10 h-10" />
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero/Main Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 data-animate="fade-up">Internships & Workshops That Empower
-                Careers</h1>
-            <p class="subtitle" data-animate="fade-up"
-                data-animate-delay="0.3s">Skill-based hands-on training in tech,
-                engineering, and design.</p>
+            <h1 data-animate="fade-up">Internships & Workshops That Empowers Career</h1>
+            <p class="subtitle" data-animate="fade-up" data-animate-delay="0.3s">
+                Skill-based hands-on training in Technology, Engineering & Designing
+            </p>
             <div class="hero-buttons">
-                <a href="#internships" class="primary-button"
-                    data-animate="fade-left" data-animate-delay="0.6s">Explore
-                    Internships</a>
-                <a href="#workshops" class="secondary-button"
-                    data-animate="fade-right" data-animate-delay="0.6s">View
-                    Workshops</a>
+                <a href="#internships" class="primary-button" data-animate="fade-left" data-animate-delay="0.6s">
+                    Explore Internships
+                </a>
+                <a href="#workshops" class="secondary-button" data-animate="fade-right" data-animate-delay="0.6s">
+                    View Workshops
+                </a>
             </div>
         </div>
+
+        <!-- Scroll Down Icon. -->
         <div class="scroll-down">
             <i class="fas fa-chevron-down"></i>
         </div>
@@ -86,15 +79,15 @@
     <section class="stats-bar">
         <div class="container">
             <div class="stat-item" data-counter="200">
-                <h3>0</h3>
+                <h3>101+</h3>
                 <p>Alumni</p>
             </div>
             <div class="stat-item" data-counter="85">
-                <h3>0</h3>
+                <h3>357</h3>
                 <p>Hired After Program</p>
             </div>
             <div class="stat-item" data-counter="50">
-                <h3>0</h3>
+                <h3>32</h3>
                 <p>Projects Completed</p>
             </div>
             <div class="stat-item">
@@ -108,19 +101,20 @@
     <section id="services" class="services">
         <div class="container">
             <h2 class="section-title" data-animate="fade-up">What We Offer</h2>
+            <!-- Start of Services Grid. -->
             <div class="services-grid">
-                <div class="service-card" data-animate="fade-up"
-                    data-animate-delay="0.2s">
+                <!-- Card 1. -->
+                <div class="service-card" data-animate="fade-up" data-animate-delay="0.2s">
                     <div class="service-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3>Paid Internships</h3>
-                    <p>3-6 month immersive programs with real-world projects and
+                    <p>3-6 month immersive programs with real-time projects and
                         mentorship.</p>
                     <button onclick="showPopup(0)" class="learn-more">Learn more →</button>
                 </div>
-                <div class="service-card" data-animate="fade-up"
-                    data-animate-delay="0.4s">
+                <!-- Card 2. -->
+                <div class="service-card" data-animate="fade-up" data-animate-delay="0.4s">
                     <div class="service-icon">
                         <i class="fas fa-chalkboard-teacher"></i>
                     </div>
@@ -129,8 +123,8 @@
                         industry-relevant skills.</p>
                     <button onclick="showPopup(1)" class="learn-more">Learn more →</button>
                 </div>
-                <div class="service-card" data-animate="fade-up"
-                    data-animate-delay="0.6s">
+                <!-- Card 3. -->
+                <div class="service-card" data-animate="fade-up" data-animate-delay="0.6s">
                     <div class="service-icon">
                         <i class="fas fa-briefcase"></i>
                     </div>
@@ -148,14 +142,13 @@
         <div class="container">
             <h2 class="section-title" data-animate="fade-up">Our Internship
                 Programs</h2>
-            <p class="section-subtitle" data-animate="fade-up"
-                data-animate-delay="0.2s">16-week immersive programs with real
+            <p class="section-subtitle" data-animate="fade-up" data-animate-delay="0.2s">16-week's immersive programs with
+                real
                 client projects and mentorship</p>
 
             <div class="internship-grid">
                 <!-- card 1. -->
-                <div class="internship-card" data-animate="fade-up"
-                    data-animate-delay="0.3s">
+                <div class="internship-card" data-animate="fade-up" data-animate-delay="0.3s">
                     <div class="internship-icon">
                         <i class="fas fa-code"></i>
                     </div>
@@ -164,268 +157,249 @@
                     <p>Master frontend, backend, or full stack development with
                         modern frameworks.</p>
                     <div class="internship-details">
-                        <span><i class="fas fa-clock"></i> 2 weeks</span>
-                        <span><i class="fas fa-rupee-sign"></i> 15K/month</span>
+                        <span><i class="fas fa-clock"></i> 6 weeks</span>
+                        <span><i class="fas fa-rupee-sign"></i> 12K/month Stipend</span>
                     </div>
                     <div class="apply-button-container">
-                        <button onclick><a href="/webDevelopmentInternship"
-                                class="primary-button">Apply Now</a></button>
+                        <button onclick><a href="/webDevelopmentInternship" class="primary-button">Apply
+                                Now</a></button>
                     </div>
                 </div>
                 <!-- Card 2. -->
-                <div class="internship-card" data-animate="fade-up"
-                    data-animate-delay="0.5s">
+                <div class="internship-card" data-animate="fade-up" data-animate-delay="0.5s">
                     <div class="internship-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
-                    <h3><a href="internship.html">Mechanical
-                            Engineering</a></h3>
-                    <p>Practical CAD, simulation, and product design experience
-                        with industry tools.</p>
+                    <h3><a href="internship.html">CNC G-Code & M-Code Programming</a></h3>
+                    <p>Learn CNC programming concepts using G-Code and M-Code with CAD and simulation tools.</p>
+
                     <div class="internship-details">
                         <span><i class="fas fa-clock"></i> 2 weeks</span>
-                        <span><i class="fas fa-rupee-sign"></i> 10K/month</span>
+                        <span><i class="fas fa-rupee-sign"></i> 8K/month stipend</span>
                     </div>
                     <div class="apply-button-container">
-                            <a href="/mechanicalInternship" class="primary-button">Apply
-                                Now</a>
-                        </div>
+                        <a href="/mechanicalInternship" class="primary-button">Apply
+                            Now</a>
                     </div>
-                    <!-- Card 3. -->
-                    <div class="internship-card" data-animate="fade-up"
-                        data-animate-delay="0.6s">
-                        <div class="internship-icon">
-                            <i class="fas fa-paint-brush"></i>
-                        </div>
-                        <h3><a href="ui-ux-internship.html">UI/UX & Graphic
-                                Design</a></h3>
-                        <p>Learn user-centered design, prototyping, and visual
-                            communication.</p>
-                        <div class="internship-details">
-                            <span><i class="fas fa-clock"></i> 16 weeks</span>
-                            <span><i class="fas fa-rupee-sign"></i>
-                                12K/month</span>
-                        </div>
-                        <div class="apply-button-container">
-                            <a href="/userInterfaceInternShip"
-                                class="primary-button">Apply Now</a>
-                        </div>
+                </div>
+                <!-- Card 3. -->
+                <div class="internship-card" data-animate="fade-up" data-animate-delay="0.6s">
+                    <div class="internship-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3><a href="ui-ux-internship.html">UI/UX & Graphic
+                            Design</a></h3>
+                    <p>Learn user-centered design, prototyping, and visual
+                        communication.</p>
+                    <div class="internship-details">
+                        <span><i class="fas fa-clock"></i> 5 weeks</span>
+                        <span><i class="fas fa-rupee-sign"></i>
+                            10K/month stipend</span>
+                    </div>
+                    <div class="apply-button-container">
+                        <a href="/userInterfaceInternShip" class="primary-button">Apply Now</a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section class="all: unset; py-20 bg-white">
-  <div class="container mx-auto px-6 max-w-5xl">
-    <h2 class="text-4xl font-extrabold text-center text-yellow-700 mb-14">
-      Success Stories
-    </h2>
-
-    <div class="grid gap-10 md:grid-cols-2">
-      
-      <!-- Testimonial 1 -->
-      <div class="bg-white border border-yellow-400 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-8">
-        <div class="text-6xl text-yellow-400 opacity-20">“</div>
-        <p class="text-gray-700 leading-relaxed mb-6">
-          The PELRC internship completely transformed my approach to web development.
-          Within 3 months of completing the program, I landed a job at a top tech company.
-        </p>
-        <div>
-          <h4 class="text-lg font-bold text-yellow-800 mb-1">Sarah J.</h4>
-          <p class="text-sm text-yellow-600">Frontend Developer, TechCorp</p>
         </div>
-      </div>
+    </section>
 
-      <!-- Testimonial 2 -->
-      <div class="bg-white border border-yellow-400 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-8">
-        <div class="text-6xl text-yellow-400 opacity-20">“</div>
-        <p class="text-gray-700 leading-relaxed mb-6">
-          The Python programming workshop gave me practical skills I could immediately apply to my work.
-          The instructors are industry professionals who really care.
-        </p>
-        <div>
-          <h4 class="text-lg font-bold text-yellow-800 mb-1">Michael T.</h4>
-          <p class="text-sm text-yellow-600">Data Analyst</p>
+    <!-- Testimonials Section -->
+    <section class="all: unset; py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-4xl font-extrabold text-center text-yellow-700 mb-14">
+                Success Stories
+            </h2>
+
+            <div class="grid gap-10 md:grid-cols-2">
+
+                <!-- Testimonial 1 -->
+                <div
+                    class="bg-white border border-yellow-400 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-8">
+                    <div class="text-6xl text-yellow-400 opacity-20">“</div>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        The PELRC internship completely transformed my approach to web development.
+                        Within 3 months of completing the program, I landed a job at a top tech company.
+                    </p>
+                    <div>
+                        <h4 class="text-lg font-bold text-yellow-800 mb-1">Sarah J.</h4>
+                        <p class="text-sm text-yellow-600">Frontend Developer, TechCorp</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div
+                    class="bg-white border border-yellow-400 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-8">
+                    <div class="text-6xl text-yellow-400 opacity-20">“</div>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        The Python programming workshop gave me practical skills I could immediately apply to my work.
+                        The instructors are industry professionals who really care.
+                    </p>
+                    <div>
+                        <h4 class="text-lg font-bold text-yellow-800 mb-1">Michael T.</h4>
+                        <p class="text-sm text-yellow-600">Data Analyst</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
 
 
-        <!-- Workshop Section -->
-        <section id="workshops" class="workshops">
-            <div class="container">
-                <h2 class="section-title" data-animate="fade-up">Upcoming
-                    Workshops</h2>
-                <p class="section-subtitle" data-animate="fade-up"
-                    data-animate-delay="0.2s">Intensive 2-day sessions focused
-                    on practical skills</p>
+    <!-- Workshop Section -->
+    <section id="workshops" class="workshops">
+        <div class="container">
+            <h2 class="section-title" data-animate="fade-up">Upcoming
+                Workshops</h2>
+            <p class="section-subtitle" data-animate="fade-up" data-animate-delay="0.2s">Intensive 2-day's (Saturday, Sunday) sessions
+                focused
+                on practical skills</p>
 
-                <div class="workshop-cards">
-                    <div class="workshop-card" data-animate="fade-up"
-                        data-animate-delay="0.3s">
-                        <div class="workshop-date">
-                            <span class="date-day">15</span>
-                            <span class="date-month">JUN</span>
-                        </div>
-                        <div class="workshop-info">
-                            <h3>Web Development Fundamentals</h3>
-                            <p class="workshop-meta"><i
-                                    class="fas fa-clock"></i> 10AM - 4PM | <i
-                                    class="fas fa-map-marker-alt"></i>
-                                Bangalore</p>
-                            <p>Learn HTML, CSS, JavaScript and build your first
-                                web application.</p>
-                            <a href="#" class="secondary-button">Reserve Spot
-                                (₹1,499)</a>
-                        </div>
+            <div class="workshop-cards">
+                <!-- Card 1. -->
+                <div class="workshop-card" data-animate="fade-up" data-animate-delay="0.3s">
+                    <div class="workshop-date">
+                        <span class="date-day">12</span>
+                        <span class="date-month">JUL</span>
                     </div>
-
-                    <div class="workshop-card" data-animate="fade-up"
-                        data-animate-delay="0.4s">
-                        <div class="workshop-date">
-                            <span class="date-day">22</span>
-                            <span class="date-month">JUN</span>
-                        </div>
-                        <div class="workshop-info">
-                            <h3>Python for Beginners</h3>
-                            <p class="workshop-meta"><i
-                                    class="fas fa-clock"></i> 10AM - 4PM | <i
-                                    class="fas fa-map-marker-alt"></i>
-                                Online</p>
-                            <p>Master Python basics and build your first
-                                automation scripts.</p>
-                            <a href="#" class="secondary-button">Reserve Spot
-                                (₹999)</a>
-                        </div>
+                    <div class="workshop-info">
+                        <h3>Frontend Development Fundamentals</h3>
+                        <p class="workshop-meta"><i class="fas fa-clock"></i> 10AM - 4PM | <i
+                                class="fas fa-map-marker-alt"></i>
+                            Online</p>
+                        <p>Learn HTML & CSS and build your first
+                            web application.</p>
+                        <a href="#" class="secondary-button">Reserve Spot
+                            (₹999)</a>
                     </div>
-
-                    <div class="workshop-card" data-animate="fade-up"
-                        data-animate-delay="0.5s">
-                        <div class="workshop-date">
-                            <span class="date-day">29</span>
-                            <span class="date-month">JUN</span>
-                        </div>
-                        <div class="workshop-info">
-                            <h3>CAD & Simulation Basics</h3>
-                            <p class="workshop-meta"><i
-                                    class="fas fa-clock"></i> 10AM - 4PM | <i
-                                    class="fas fa-map-marker-alt"></i>
-                                Bangalore</p>
-                            <p>Hands-on CAD practice using SolidWorks or AutoCAD
-                                for mechanical design.</p>
-                            <a href="#" class="secondary-button">Reserve Spot
-                                (₹1,799)</a>
-                        </div>
+                </div>
+                <!-- Card 2. -->
+                <div class="workshop-card" data-animate="fade-up" data-animate-delay="0.4s">
+                    <div class="workshop-date">
+                        <span class="date-day">13</span>
+                        <span class="date-month">JUL</span>
                     </div>
+                    <div class="workshop-info">
+                        <h3>Python for Beginners</h3>
+                        <p class="workshop-meta"><i class="fas fa-clock"></i> 10AM - 4PM | <i
+                                class="fas fa-map-marker-alt"></i>
+                            Online</p>
+                        <p>Master Python basics and build your first
+                            automation scripts.</p>
+                        <a href="#" class="secondary-button">Reserve Spot
+                            (₹999)</a>
+                    </div>
+                </div>
+                <!-- Card 3. -->
+                <div class="workshop-card" data-animate="fade-up" data-animate-delay="0.5s">
+                    <div class="workshop-date">
+                        <span class="date-day">19</span>
+                        <span class="date-month">JUL</span>
+                    </div>
+                    <div class="workshop-info">
+                        <h3>CAD & Simulation Basics</h3>
+                        <p class="workshop-meta"><i class="fas fa-clock"></i> 10AM - 4PM | <i
+                                class="fas fa-map-marker-alt"></i>
+                            Online</p>
+                        <p>Hands-on CAD practice using SolidWorks or AutoCAD
+                            for mechanical design.</p>
+                        <a href="#" class="secondary-button">Reserve Spot
+                            (₹1,799)</a>
+                    </div>
+                </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-animate="fade-up">
+                <h2>Ready to Launch Your Career?</h2>
+                <p>Reach out to PELRC — we're here to help you get
+                    started.</p>
+                <!-- Enquiry Form. -->
+                <form id="contactForm" class="application-form" method="post" action="/auth/api/send/inquiry">
+                    <input type="text" name="name" placeholder="Full Name" required />
+                    <input type="email" name="email" placeholder="Email Address" required />
+                    <input type="text" name="message" placeholder="Your Message" required />
+                    <button type="submit" class="primary-button">Send
+                        Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about" data-animate="fade-up">
+                    <h3>PELRC</h3>
+                    <p>Empowering the next generation of professionals
+                        through immersive education and real-world
+                        experience.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/pelrctech?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@TechPelrc" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61577086829400" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links" data-animate="fade-up" data-animate-delay="0.2s">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="#internships">Internships</a></li>
+                        <li><a href="#workshops">Workshops</a></li>
+                        <li><a href="#">Corporate Training</a></li>
+                        <li><a href="#">Sponsorships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links" data-animate="fade-up" data-animate-delay="0.4s">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="#">Our Mentors</a></li>
+                        <li><a href="#testimonials">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact footer-links" data-animate="fade-up" data-animate-delay="0.6s">
+                    <h4>Contact</h4>
+                    <div class="flex gap-3 justify-center">
+                        <i class="fas fa-map-marker-alt mt-1"></i>
+                        <p>Plot No. 72 C, Sector 11, Beside Ryan International School, Kharghar, Navi Mumbai,
+                            Maharashtra – 410210 </p>
+                    </div>
+                    <p><i class="fas fa-phone"></i> (+91) 81087 59777 </p>
+                    <p><i class="fas fa-envelope"></i> tech.pelrc@gmail.com</p>
                 </div>
             </div>
-        </section>
-
-        <!-- Contact/CTA Section -->
-        <section id="contact" class="cta-section">
-            <div class="container">
-                <div class="cta-content" data-animate="fade-up">
-                    <h2>Ready to Launch Your Career?</h2>
-                    <p>Reach out to PELRC — we're here to help you get
-                        started.</p>
-
-                    <form id="contactForm" class="application-form"
-                        method="post" action="/auth/api/send/inquiry">
-                        <input type="text" name="name" placeholder="Full Name"
-                            required />
-                        <input type="email" name="email"
-                            placeholder="Email Address" required />
-                        <input type="text" name="message"
-                            placeholder="Your Message" required />
-                        <button type="submit" class="primary-button">Send
-                            Message</button>
-                    </form>
-
-                    <!-- Flash message -->
-                    <div id="flashMessage"
-                        class="bg-yellow-100 border border-yellow-400 text-yellow-800 text-center font-semibold px-6 py-3 rounded-md mt-4 hidden shadow-md">
-                        Message sent successfully!
-                    </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 PELRC. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </footer>
 
-        <!-- Footer Section -->
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-about" data-animate="fade-up">
-                        <h3>PELRC</h3>
-                        <p>Empowering the next generation of professionals
-                            through immersive education and real-world
-                            experience.</p>
-                        <div class="social-links">
-                            <a
-                                href="https://www.instagram.com/pelrctech?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                                target="_blank"><i
-                                    class="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/@TechPelrc"
-                                target="_blank"><i
-                                    class="fab fa-youtube"></i></a>
-                            <a
-                                href="https://www.facebook.com/profile.php?id=61577086829400"
-                                target="_blank"><i
-                                    class="fab fa-facebook"></i></a>
-                        </div>
-                    </div>
-                    <div class="footer-links" data-animate="fade-up"
-                        data-animate-delay="0.2s">
-                        <h4>Programs</h4>
-                        <ul>
-                            <li><a href="#internships">Internships</a></li>
-                            <li><a href="#workshops">Workshops</a></li>
-                            <li><a href="#">Corporate Training</a></li>
-                            <li><a href="#">Scholarships</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-links" data-animate="fade-up"
-                        data-animate-delay="0.4s">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="/about">About Us</a></li>
-                            <li><a href="#">Our Mentors</a></li>
-                            <li><a href="#testimonials">Success Stories</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-contact footer-links" data-animate="fade-up"
-                        data-animate-delay="0.6s">
-                        <h4>Contact</h4>
-                        <div class="flex gap-3 justify-center">
-                            <i class="fas fa-map-marker-alt mt-1"></i>
-                            <p>Plot No. 72 C, Sector 11, Beside Ryan International School, Kharghar, Navi Mumbai, Maharashtra – 410210 </p>
-                        </div>
-                        <p><i class="fas fa-phone"></i> (+91) 81087 59777 </p>
-                        <p><i class="fas fa-envelope"></i> tech.pelrc@gmail.com</p>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2023 PELRC. All rights reserved.</p>
-                    <div class="legal-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+    <!-- Particles.js for preloader -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script>
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('logout') === 'success') {
+    alert('Logout Successful');
 
-        <!-- Particles.js for preloader -->
-        <script
-            src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-        <script src="./scripts/script.js"></script>
-        <script>
+    // Remove ?logout=success from the URL without reloading the page
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
 </script>
 
-    </body>
+</body>
+
 </html>

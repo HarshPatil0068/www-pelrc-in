@@ -106,43 +106,21 @@ if (mobileMenuBtn) {
 
 
   // ==================== Contact Form Submission ====================
-  const form = document.getElementById("contactForm");
-  const flash = document.getElementById("flashMessage");
+window.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const status = params.get("status");
 
-  if (form && flash) {
-    flash.classList.add("hidden");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-      const data = {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message"),
-      };
-
-      try {
-        const res = await fetch("/auth/api/send/inquiry", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
-
-        if (res.ok) {
-          flash.classList.remove("hidden");
-          form.reset();
-          setTimeout(() => flash.classList.add("hidden"), 4000);
-        } else {
-          alert("Failed to send message.");
-        }
-      } catch (err) {
-        console.error("Error:", err);
-        alert("Something went wrong.");
-      }
-    });
+  if (status === "success") {
+    alert("Application sent! We'll get back to you soon.");
+  } else if (status === "error") {
+    alert("Something went wrong.");
   }
 
+  if (status) {
+    // Remove query string without reloading
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+});
   // ==================== Scroll Animations & Stats Counter ====================
   const statItems = document.querySelectorAll('.stat-item[data-counter]');
 

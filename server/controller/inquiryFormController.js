@@ -18,7 +18,7 @@ const sendEnquiryMessage = async (req, res) => {
     await transporter.sendMail({
       from: `"Contacted through pelrc.in" <${email}>`,
       to: process.env.EMAIL_USER,
-      subject: `Inquiry from ${name}`,
+      subject: `Enquiry from ${name}`,
       html: `
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
@@ -26,8 +26,7 @@ const sendEnquiryMessage = async (req, res) => {
       `,
     });
 
-    // AJAX request
-    res.status(200).json({ message: "Message sent successfully" });
+     res.redirect('/?status=success');
   } catch (err) {
     console.error("Contact form error:", err);
     res.status(500).json({ message: "Something went wrong" });
