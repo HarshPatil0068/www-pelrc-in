@@ -29,7 +29,7 @@ app.use(checkUser);
 // Route Usage
 app.use("/", pageRoutes);
 app.use("/auth", authRoutes);
-app.use("/send/mail", mailRoutes);
+app.use("/send/mail", mailRoutes)
 
 // Server Start
 app.listen(process.env.PORT || 3000);
