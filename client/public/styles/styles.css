@@ -637,56 +637,6 @@ a {
   padding-top: 20px;
 }
 
-/* Testimonial section. */
-/* .testimonial-content::before {
-    content: '"';
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 5rem;
-    color: var(--primary);
-    opacity: 0.1;
-    font-family: serif;
-    line-height: 1;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.testimonial-author img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px;
-    border: 3px solid var(--primary);
-}
-
-.testimonial-dots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 30px;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: var(--light-gray);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.dot.active {
-    background-color: var(--primary);
-    transform: scale(1.2);
-} */
-
 /* Workshop Section */
 .workshops {
   background-color: var(--light);
@@ -1199,3 +1149,33 @@ footer {
 .no-scroll {
   overflow: hidden;
 }
+
+
+/* Common styles for testimonial cards */
+  .testimonial-card {
+    flex: 1;
+    background-color: white;
+    border: 1px solid #fbd38d; /* yellow-400 */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+    transition: box-shadow 0.3s ease-in-out; /* transition-shadow duration-300 */
+    padding: 1.25rem 2rem; /* px-8 py-5 */
+  }
+
+  .testimonial-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* hover:shadow-xl */
+  }
+
+  /* Common styles for testimonial quotes */
+  .testimonial-quote {
+    font-size: 6rem; /* text-8xl */
+    color: #fbd38d; /* yellow-400 */
+    opacity: 0.4;
+  }
+
+  /* Text alignment within the cards should generally be left for readability */
+  .testimonial-card p,
+  .testimonial-card h4,
+  .testimonial-card div:last-child p { /* Specific targeting for the intern's title */
+    text-align: left;
+  }

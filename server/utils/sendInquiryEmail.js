@@ -10,10 +10,10 @@ const sendInquiryEmail = async ({ name, email, message }) => {
   });
 
   await transporter.sendMail({
-  from: `"Contacted through pelrc.in" <${email}>`,
-  to: process.env.EMAIL_USER,
-  subject: `Enquiry from ${name}`,
-  html: `
+    from: `"Contacted through pelrc.in" <${email}>`,
+    to: process.env.EMAIL_USER,
+    subject: `Enquiry from ${name}`,
+    html: `
   <div style="
     background-color: #f8f8f8;
     padding: 40px;
@@ -69,7 +69,7 @@ const sendInquiryEmail = async ({ name, email, message }) => {
     </div>
   </div>
   `
-}).catch(console.error);
+  }).catch(console.error);
 
 };
 
