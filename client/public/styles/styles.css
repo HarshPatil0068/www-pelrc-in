@@ -1151,7 +1151,7 @@ footer {
 }
 
 
-/* Common styles for testimonial cards */
+ /* Common styles for testimonial cards */
   .testimonial-card {
     flex: 1;
     background-color: white;
@@ -1159,7 +1159,22 @@ footer {
     border-radius: 0.75rem; /* rounded-xl */
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
     transition: box-shadow 0.3s ease-in-out; /* transition-shadow duration-300 */
-    padding: 1.25rem 2rem; /* px-8 py-5 */
+    padding: 1rem 1.5rem; /* Reduced internal padding */
+
+    /* ----- IMPORTANT FOR MOBILE RESPONSIVENESS & HORIZONTAL MARGINS ----- */
+    max-width: 480px; /* Limit the max width of each card */
+    width: calc(100% - 2rem); /* Take full width minus 1rem on each side (total 2rem) */
+    margin-left: 1rem; /* Add horizontal margin on the left */
+    margin-right: 1rem; /* Add horizontal margin on the right */
+  }
+
+  /* On medium screens and up, reset horizontal margins for flex gap to work correctly */
+  @media (min-width: 768px) { /* md breakpoint in Tailwind */
+    .testimonial-card {
+      margin-left: 0;
+      margin-right: 0;
+      width: auto; /* Reset width so flex: 1 can manage it */
+    }
   }
 
   .testimonial-card:hover {
@@ -1168,14 +1183,16 @@ footer {
 
   /* Common styles for testimonial quotes */
   .testimonial-quote {
-    font-size: 6rem; /* text-8xl */
+    font-size: 5rem; /* Reduced from 6rem */
     color: #fbd38d; /* yellow-400 */
-    opacity: 0.4;
+    opacity: 0.2;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
   }
 
   /* Text alignment within the cards should generally be left for readability */
   .testimonial-card p,
   .testimonial-card h4,
-  .testimonial-card div:last-child p { /* Specific targeting for the intern's title */
+  .testimonial-card div:last-child p {
     text-align: left;
   }
