@@ -1,7 +1,6 @@
 const sendEmail = require("../utils/sendInquiryEmail");
 
 const sendInquiryEmail = async (req, res) => {
-  console.log("Incoming request body:", req.body); // ✅ log
 
   const { name, email, message } = req.body;
 
