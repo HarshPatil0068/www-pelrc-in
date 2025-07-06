@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="mobile-menu-close">
           <img src="./images/close.svg" alt="Close Menu" class="w-10 h-10" />
         </div>
-        <a href="#services">Technical Manuals</a>
+        <a href="#services">Services</a>
         <a href="#internships">Internships</a>
         <a href="#workshops">Workshops</a>
         <a href="/about">About</a>
@@ -282,4 +282,3 @@ function closePopup() {
   }
 }
 
-console.log("hello");
