@@ -281,3 +281,5 @@ function closePopup() {
     scrollListener = null;
   }
 }
+
+console.log("hello");
