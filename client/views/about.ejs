@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Proengineers Learning & Research Center</title>
     <link rel="stylesheet" href="./styles/about.css">
+    <link rel="stylesheet" href="./styles/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">PELRC</a>
-            <div class="nav-links">
-                <a href="#services">Techincal Manuals</a>
-                <a href="#workshops">Workshops</a>
-                <a href="#internships">Internships</a>
-                <a href="#about">About</a>
-                <div class="auth-buttons">
-                    <a href="login.html" class="login-button">Login</a>
-                    <a href="signup.html" class="signup-button">Sign Up</a>
+        <nav class="navbar">
+            <div class="container">
+                <a href="/" class="logo">PELRC</a>
+                <div class="nav-links">
+                
+                    <div class="auth-buttons">
+                        <% if (isLoggedIn) { %>
+                        <button class="login-button">Account</button>
+                        <button class="signup-button">Logout</a></button>
+                    <% } else { %>
+                    <button class="login-button"
+                        onclick="window.location.href='/auth/?form=login';">Sign
+                        In</button>
+                    <button class="signup-button"
+                        onclick="window.location.href='/auth?form=regisister';">Register</button>
+                    <% } %>
                 </div>
+            </div>
+            <div class="mobile-menu">
+                <img src="./images/hamburger.svg" alt="Open Menu" class="w-10 h-10" />
             </div>
         </div>
     </nav>
 
     <!-- About Section -->
     <section class="about">
-        <div class="container">
+        <div class="containerr">
             <button><a href="/">back</a></button>
             <h1>About Us</h1>
-            <p>Proengineers Learning & Research Center is a one-stop destination for comprehensive technical education, practical training, and industry-aligned skill development. We empower students from Diploma, Degree, BE/BTech, BSc IT, BCA, and other technical backgrounds to become future-ready professionals.</p>
+            <p>Proengineers Learning & Research Center is a one-stop destination for comprehensive technical education,
+                practical training, and industry-aligned skill development. We empower students from Diploma, Degree,
+                BE/BTech, BSc IT, BCA, and other technical backgrounds to become future-ready professionals.</p>
             <p>Our programs span across various engineering disciplines including:</p>
             <ul>
                 <li>Computer Engineering</li>
@@ -41,14 +54,17 @@
                 <li>Artificial Intelligence & Machine Learning (AI/ML)</li>
                 <li>Mechatronics</li>
             </ul>
-            <p>We also provide hands-on apprenticeship opportunities in specialized trades like Electrical Wiring, CNC Machine Operation, and more—bridging the gap between classroom knowledge and on-ground industrial practice.</p>
-            <p>With a team of seasoned professionals and strong industry collaborations, we aim to build a workforce that’s both technically sound and practically skilled.</p>
+            <p>We also provide hands-on apprenticeship opportunities in specialized trades like Electrical Wiring, CNC
+                Machine Operation, and more—bridging the gap between classroom knowledge and on-ground industrial
+                practice.</p>
+            <p>With a team of seasoned professionals and strong industry collaborations, we aim to build a workforce
+                that’s both technically sound and practically skilled.</p>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
-        <div class="container">
+        <div class="containerr">
             <h2>Our Services</h2>
             <p>We provide a wide range of academic and industry-relevant services to students across disciplines:</p>
             <ul>
@@ -63,14 +79,15 @@
 
     <!-- Workshops Section -->
     <section id="workshops" class="workshops">
-        <div class="container">
+        <div class="containerr">
             <h2>Workshops</h2>
             <p>Our workshops are designed to deliver both conceptual clarity and practical confidence in key areas:</p>
             <ul>
                 <li><strong>Computer & AI/ML:</strong> Python, Java, Data Science, Cloud Computing, AI Algorithms</li>
                 <li><strong>Mechanical & Mechatronics:</strong> 3D Printing, SolidWorks, CNC, Robotics</li>
                 <li><strong>Civil:</strong> AutoCAD, STAAD Pro, Construction Materials Testing</li>
-                <li><strong>Electronics & Electrical:</strong> PCB Designing, PLC & SCADA, IoT with Arduino/Raspberry Pi</li>
+                <li><strong>Electronics & Electrical:</strong> PCB Designing, PLC & SCADA, IoT with Arduino/Raspberry Pi
+                </li>
                 <li><strong>Multidisciplinary:</strong> Industry 4.0, Smart Automation, Renewable Energy Systems</li>
             </ul>
         </div>
@@ -78,24 +95,26 @@
 
     <!-- Internships Section -->
     <section id="internships" class="internships">
-        <div class="container">
+        <div class="containerr">
             <h2>Internships</h2>
             <p>We offer internship programs customized by branch and interest area, including:</p>
             <ul>
-                <li><strong>Computer Science/IT:</strong> Full-stack development, Web & App Development, Cybersecurity</li>
+                <li><strong>Computer Science/IT:</strong> Full-stack development, Web & App Development, Cybersecurity
+                </li>
                 <li><strong>Mechanical:</strong> Machine Design, Thermal Systems, CNC Exposure</li>
                 <li><strong>Civil:</strong> Structural Drafting, Estimation & Billing, On-Site Training</li>
                 <li><strong>Electronics/Electrical:</strong> IoT Applications, Solar Panel Setup, Motor Winding</li>
                 <li><strong>Mechatronics:</strong> Sensor Integration, Embedded C, Motion Control Systems</li>
                 <li><strong>AI/ML:</strong> NLP, Computer Vision, Data Analytics Projects</li>
             </ul>
-            <p>Each internship is certified and guided by industry mentors, enabling students to build project portfolios and technical documentation.</p>
+            <p>Each internship is certified and guided by industry mentors, enabling students to build project
+                portfolios and technical documentation.</p>
         </div>
     </section>
 
     <!-- Training Programs Section -->
     <section class="training-programs">
-        <div class="container">
+        <div class="containerr">
             <h2>Training Programs</h2>
             <p>Our training programs are designed to convert theory into real-world applications:</p>
             <ul>
@@ -127,7 +146,7 @@
 
     <!-- Why Choose Us Section -->
     <section class="why-choose-us">
-        <div class="container">
+        <div class="containerr">
             <h2>Why Choose Us?</h2>
             <ul>
                 <li>Multi-disciplinary training under one roof</li>
@@ -140,38 +159,18 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer>
+    <!-- Footer -->
+    <footer class="page-footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <h3>PELRC</h3>
-                    <p>Empowering the next generation of professionals through immersive education and real-world experience.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Programs</h4>
-                    <ul>
-                        <li><a href="#">Internships</a></li>
-                        <li><a href="#">Workshops</a></li>
-                        <li><a href="#">Corporate Training</a></li>
-                        <li><a href="#">Scholarships</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Bangalore</p>
-                    <p><i class="fas fa-phone"></i> (080) 555-7890</p>
-                    <p><i class="fas fa-envelope"></i> hello@pelrc.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 PELRC. All rights reserved.</p>
-                <div class="legal-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
+            <p>&copy; 2025 PELRC. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/#internships">Internships</a>
+                <a href="/#workshops">Workshops</a>
+                <a href="/#contact">Contact</a>
             </div>
         </div>
     </footer>
 </body>
+
 </html>

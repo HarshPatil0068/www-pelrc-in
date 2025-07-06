@@ -25,12 +25,22 @@
         </div>
     </div>
 
+
+    <!-- Under Development Banner -->
+    <div id="dev-banner" class="bg-gray-800 text-gray-100 text-center py-2 px-4 w-full fixed top-0 z-[1050]">
+    <p class="text-sm font-medium">
+        🚧 This website is currently <span class="font-semibold text-yellow-400">under development</span>. Some features may not work as expected.
+    </p>
+    </div>
+
+
+
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container">
             <a href="/" class="logo">PELRC</a>
             <div class="nav-links">
-                <a href="#services">Technical Manuals</a>
+                <a href="#services">Services</a>
                 <a href="#internships">Internships</a>
                 <a href="#workshops">Workshops</a>
                 <a href="/about">About</a>
@@ -178,7 +188,7 @@
                         <span><i class="fas fa-rupee-sign"></i> 8K/month stipend</span>
                     </div>
                     <div class="apply-button-container">
-                        <a href="/mechanicalInternship" class="primary-button">Apply
+                        <a href="/cncProgrammingInternship" class="primary-button">Apply
                             Now</a>
                     </div>
                 </div>
@@ -320,13 +330,11 @@
                 <h2>Ready to Launch Your Career?</h2>
                 <p>Reach out to PELRC — we're here to help you get
                     started.</p>
-                <!-- Enquiry Form. -->
-                <form id="contactForm" class="application-form" method="post" action="/auth/api/send/inquiry">
+                <form id="contactForm" class="application-form" method="post" action="/send/mail/inquiry">
                     <input type="text" name="name" placeholder="Full Name" required />
                     <input type="email" name="email" placeholder="Email Address" required />
                     <input type="text" name="message" placeholder="Your Message" required />
-                    <button type="submit" class="primary-button">Send
-                        Message</button>
+                    <button type="submit" class="primary-button" id="submitBtn">Send Message</button>
                 </form>
             </div>
         </div>
@@ -391,14 +399,35 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="./scripts/script.js"></script>
     <script>
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get('logout') === 'success') {
-    alert('Logout Successful');
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('logout') === 'success') {
+            alert('Logout Successful');
 
-    // Remove ?logout=success from the URL without reloading the page
-    window.history.replaceState({}, document.title, window.location.pathname);
-  }
-</script>
+            // Remove ?logout=success from the URL without reloading the page
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+
+         document.addEventListener("DOMContentLoaded", () => {
+    const banner = document.getElementById("dev-banner");
+    if (!banner) return;
+
+    // Hide on scroll (once)
+    let hasScrolled = false;
+    const hideOnScroll = () => {
+      if (!hasScrolled) {
+        banner.style.display = "none";
+        hasScrolled = true;
+        window.removeEventListener("scroll", hideOnScroll); // remove listener after first scroll
+      }
+    };
+    window.addEventListener("scroll", hideOnScroll);
+
+    // Hide after 5 minutes
+    setTimeout(() => {
+            banner.style.display = "none";
+        }, 6000); // 5 minutes in milliseconds
+    });
+    </script>
 
 </body>
 

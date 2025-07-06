@@ -30,7 +30,7 @@
                         onclick="window.location.href='/auth/?form=login';">Sign
                         In</button>
                     <button class="signup-button"
-                        onclick="window.location.href='/auth?form=regisister';">Register</button>
+                        onclick="window.location.href='/auth?form=register';">Register</button>
                     <% } %>
                 </div>
             </div>
@@ -55,7 +55,7 @@
     <section class="internship-details">
         <div class="container">
             <h2 class="section-title">Internship Details</h2>
-            <p class="section-subtitle">A comprehensive 2-week program designed to give you real-world web development experience</p>
+            <p class="section-subtitle">A comprehensive 6-week program designed to give you real-time web development experience</p>
             
             <div class="details-grid">
                 <!-- Duration Card -->
@@ -63,8 +63,12 @@
                     <h3><i class="fas fa-calendar-alt"></i> Duration & Schedule</h3>
                     <p>2-week intensive program with structured learning and hands-on practice:</p>
                     <ul>
-                        <li>Week 1: 2 days online sessions + 3 days hands-on tasks</li>
-                        <li>Week 2: Mini project with mentor review</li>
+                        <li>Week 1: HTMl Sessions</li>
+                        <li>Week 2: CSS Sessions</li>
+                        <li>Week 3: Mini Projects</li>
+                        <li>Week 4: JS Sessions</li>
+                        <li>Week 5: Git & Github + Mini Project</li>
+                        <li>Week 6: Mega Project & Deployment </li>
                         <li>Daily support from industry mentors</li>
                     </ul>
                 </div>
@@ -106,8 +110,8 @@
                 <div class="offer-badge">Limited Offer</div>
                 <h3>Web Development Internship</h3>
                 <div class="price-tag">
-                    <span class="original-price">₹4999</span>
-                    ₹1999
+                    <span class="original-price">₹19999</span>
+                    ₹4999
                 </div>
                 <p class="urgency-text">Only 15 spots available for next cohort</p>
                 <a href="#apply" class="primary-button">Secure Your Spot</a>
@@ -167,15 +171,15 @@
             <h2 class="section-title">Ready to Start Your Journey?</h2>
             <p class="section-subtitle">Apply now for the next cohort starting soon</p>
             
-            <form class="application-form" id="reg-form" method="post" action="/auth/api/send/web-dev-registration">
+            <form class="application-form" id="reg-form" method="post" action="/send/mail/web-dev-registration">
             <input type="text" name="name" placeholder="Your Name" required />
             <input type="email" name="email" placeholder="Email Address" required />
             <input type="tel" name="phone" placeholder="Phone Number" required />
             <select name="preferredDate" required>
                 <option value="">Preferred Start Date</option>
-                <option>June 15, 2023</option>
-                <option>July 1, 2023</option>
-                <option>July 15, 2023</option>
+                <option>July 12, 2025</option>
+                <option>July 19, 2025</option>
+                <option>July 26, 2025</option>
             </select>
             <button type="submit" class="primary-button">Submit Application</button>
             </form>
@@ -187,10 +191,10 @@
         <div class="container">
             <p>&copy; 2023 PELRC. All rights reserved.</p>
             <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="index.html#internships">Internships</a>
-                <a href="index.html#workshops">Workshops</a>
-                <a href="index.html#contact">Contact</a>
+                <a href="/">Home</a>
+                <a href="/#internships">Internships</a>
+                <a href="/#workshops">Workshops</a>
+                <a href="/#contact">Contact</a>
             </div>
         </div>
     </footer>

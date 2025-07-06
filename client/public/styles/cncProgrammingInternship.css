@@ -111,88 +111,7 @@ a {
     }
 }
 
-/* Navigation Bar Styles with animations */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(248, 248, 248, 0.9);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    z-index: 1000;
-    padding: 15px 0;
-    transition: all 0.4s ease;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
 
-.navbar.scrolled {
-    padding: 10px 0;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
-    background-color: rgba(248, 248, 248, 0.98);
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Logo with animated underline effect */
-.logo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--primary);
-    letter-spacing: 1px;
-    position: relative;
-}
-
-.logo::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--primary);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.4s ease;
-}
-
-.logo:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-/* Navigation links with animated underline */
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.nav-links a {
-    font-weight: 500;
-    position: relative;
-    padding: 5px 0;
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--primary);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
 
 /* CTA button animation */
 .cta-button {
@@ -825,5 +744,142 @@ a {
 
     .original-price {
         font-size: 1.2rem;
+    }
+}
+
+
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    margin: 15px auto 30px;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #64748b;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+.code-examples {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 40px 0;
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.code-block {
+    background: #0f172a;
+    border-radius: 10px;
+    padding: 25px;
+    overflow-x: auto;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+    border: 1px solid #334155;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.code-block:hover {
+    transform: translateY(-5px);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5), 
+                0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.code-block h4 {
+    color: #f59e0b;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #334155;
+}
+
+.code-block h4::before {
+    content: "»";
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+.code-block pre {
+    color: #cbd5e1;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.code-comment {
+    color: #94a3b8;
+    font-style: italic;
+}
+
+.g-code {
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+.m-code {
+    color: #f87171;
+    font-weight: 600;
+}
+
+/* Syntax highlighting for CNC codes */
+.g-code::after, .m-code::after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .code-examples {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .internship-details {
+        padding: 60px 0 40px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+    
+    .code-examples {
+        padding: 20px;
+    }
+    
+    .code-block {
+        padding: 20px;
+    }
+    
+    .code-block pre {
+        font-size: 0.85rem;
     }
 }

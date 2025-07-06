@@ -1,7 +1,21 @@
 // ==================== DOM Ready ====================
 window.addEventListener("DOMContentLoaded", () => {
+  // URL status alerts (only needed if fallback or redirection is used)
+  const params = new URLSearchParams(window.location.search);
+  const status = params.get("status");
+
+  if (status === "success") {
+    alert("Application sent! We'll get back to you soon.");
+  } else if (status === "error") {
+    alert("Something went wrong.");
+  }
+
+  if (status) {
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+
   // ==================== AJAX Form Submission ====================
-  const form = document.querySelector(".uiux-application-form");
+  const form = document.querySelector(".application-form");
   if (form) {
     const submitBtn = form.querySelector("button[type='submit']");
 
@@ -9,17 +23,17 @@ window.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       submitBtn.disabled = true;
-      submitBtn.innerText = "Submitting...";
+      submitBtn.innerHTML = "Submitting Application...";
 
       const formData = {
         name: form.elements["name"].value,
         email: form.elements["email"].value,
         phone: form.elements["phone"].value,
-        message: form.elements["message"].value,
+        preferredDate: form.elements["preferredDate"].value,
       };
 
       try {
-        const res = await fetch("/send/mail/user-interface-registration", {
+        const res = await fetch(form.action, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -28,24 +42,24 @@ window.addEventListener("DOMContentLoaded", () => {
         });
 
         if (res.ok) {
-          submitBtn.innerText = "Submitted Successfully!";
+          submitBtn.innerHTML = "Sent!";
           form.reset();
         } else {
-          submitBtn.innerText = "Submission Failed";
+          submitBtn.innerHTML = "Submission Failed";
         }
       } catch (err) {
         console.error("Form submission error:", err);
-        submitBtn.innerText = "Network Error";
+        submitBtn.innerHTML = "Network Error";
       }
 
       setTimeout(() => {
         submitBtn.disabled = false;
-        submitBtn.innerText = "Submit Application";
+        submitBtn.innerHTML = "Submit Application";
       }, 3000);
     });
   }
 
-  // ==================== Mobile Navigation Toggle ====================
+   // ==================== Mobile Navigation Toggle ====================
   const mobileMenuBtn = document.querySelector('.mobile-menu');
   if (mobileMenuBtn) {
     const menuIcon = mobileMenuBtn.querySelector('img');
