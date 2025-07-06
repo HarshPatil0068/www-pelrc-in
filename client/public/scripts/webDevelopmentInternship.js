@@ -46,33 +46,25 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==================== Mobile Navigation Toggle ====================
-  // ==================== Mobile Navigation Toggle ====================
   const mobileMenuBtn = document.querySelector('.mobile-menu');
   if (mobileMenuBtn) {
-    const menuIcon = mobileMenuBtn.querySelector('img');
     const mobileNav = document.createElement('div');
     mobileNav.className = 'mobile-nav';
 
+    const authButtons = document.getElementById("mobile-auth")?.innerHTML || "";
+
     mobileNav.innerHTML = `
-    <div class="mobile-nav-links">
-      <div class="mobile-menu-close">
-        <img src="./images/close.svg" alt="Close Menu" class="w-10 h-10" />
+      <div class="mobile-nav-links">
+        <div class="mobile-menu-close">
+          <img src="./images/close.svg" alt="Close Menu" class="w-10 h-10" />
+        </div>
+        <a href="/#services">Technical Manuals</a>
+        <a href="/#internships">Internships</a>
+        <a href="/#workshops">Workshops</a>
+        <a href="/about">About</a>
+        <div class="mobile-cta">${authButtons}</div>
       </div>
-      <a href="/#services">Technical Manuals</a>
-      <a href="/#internships">Internships</a>
-      <a href="/#workshops">Workshops</a>
-      <a href="/about">About</a>
-      <div class="mobile-cta">
-        <% if (isLoggedIn) { %>
-          <button class="login-button">Account</button>
-          <button class="signup-button">Logout</button>
-        <% } else { %>
-          <button class="login-button" onclick="window.location.href='/auth?form=login'">Sign In</button>
-          <button class="signup-button" onclick="window.location.href='/auth?form=register'">Register</button>
-        <% } %>
-      </div>
-    </div>
-  `;
+    `;
 
     document.body.appendChild(mobileNav);
 

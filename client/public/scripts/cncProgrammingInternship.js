@@ -1,18 +1,11 @@
 // ==================== DOM Ready ====================
 window.addEventListener("DOMContentLoaded", () => {
-  // URL status alerts (only needed if fallback or redirection is used)
   const params = new URLSearchParams(window.location.search);
   const status = params.get("status");
 
-  if (status === "success") {
-    alert("Application sent! We'll get back to you soon.");
-  } else if (status === "error") {
-    alert("Something went wrong.");
-  }
-
-  if (status) {
-    window.history.replaceState({}, document.title, window.location.pathname);
-  }
+  if (status === "success") alert("Application sent! We'll get back to you soon.");
+  else if (status === "error") alert("Something went wrong.");
+  if (status) window.history.replaceState({}, document.title, window.location.pathname);
 
   // ==================== AJAX Form Submission ====================
   const form = document.querySelector(".application-form");
@@ -21,7 +14,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
-
       submitBtn.disabled = true;
       submitBtn.innerHTML = "Submitting Application...";
 
@@ -35,9 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
       try {
         const res = await fetch(form.action, {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
         });
 
@@ -59,51 +49,45 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-   // ==================== Mobile Navigation Toggle ====================
-  const mobileMenuBtn = document.querySelector('.mobile-menu');
+  // ==================== Mobile Navigation Toggle ====================
+  const mobileMenuBtn = document.querySelector(".mobile-menu");
   if (mobileMenuBtn) {
-    const menuIcon = mobileMenuBtn.querySelector('img');
-    const mobileNav = document.createElement('div');
-    mobileNav.className = 'mobile-nav';
+    const menuIcon = mobileMenuBtn.querySelector("img");
+    const mobileNav = document.createElement("div");
+    mobileNav.className = "mobile-nav";
+
+    const authButtons = document.getElementById("mobile-auth")?.innerHTML || "";
 
     mobileNav.innerHTML = `
-    <div class="mobile-nav-links">
-      <div class="mobile-menu-close">
-        <img src="./images/close.svg" alt="Close Menu" class="w-10 h-10" />
+      <div class="mobile-nav-links">
+        <div class="mobile-menu-close">
+          <img src="./images/close.svg" alt="Close Menu" class="w-10 h-10" />
+        </div>
+        <a href="#services">Technical Manuals</a>
+        <a href="#internships">Internships</a>
+        <a href="#workshops">Workshops</a>
+        <a href="/about">About</a>
+        <div class="mobile-cta">${authButtons}</div>
       </div>
-      <a href="/#services">Technical Manuals</a>
-      <a href="/#internships">Internships</a>
-      <a href="/#workshops">Workshops</a>
-      <a href="/about">About</a>
-      <div class="mobile-cta">
-        <% if (isLoggedIn) { %>
-          <button class="login-button">Account</button>
-          <button class="signup-button">Logout</button>
-        <% } else { %>
-          <button class="login-button" onclick="window.location.href='/auth?form=login'">Sign In</button>
-          <button class="signup-button" onclick="window.location.href='/auth?form=register'">Register</button>
-        <% } %>
-      </div>
-    </div>
-  `;
+    `;
 
     document.body.appendChild(mobileNav);
 
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileNav.classList.add('active');
-      document.body.classList.add('no-scroll');
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileNav.classList.add("active");
+      document.body.classList.add("no-scroll");
     });
 
-    const closeBtn = mobileNav.querySelector('.mobile-menu-close');
-    closeBtn.addEventListener('click', () => {
-      mobileNav.classList.remove('active');
-      document.body.classList.remove('no-scroll');
+    const closeBtn = mobileNav.querySelector(".mobile-menu-close");
+    closeBtn.addEventListener("click", () => {
+      mobileNav.classList.remove("active");
+      document.body.classList.remove("no-scroll");
     });
 
-    mobileNav.querySelectorAll('a, .mobile-cta button').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('active');
-        document.body.classList.remove('no-scroll');
+    mobileNav.querySelectorAll("a, .mobile-cta button").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileNav.classList.remove("active");
+        document.body.classList.remove("no-scroll");
       });
     });
   }

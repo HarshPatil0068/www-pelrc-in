@@ -37,6 +37,16 @@
             <div class="mobile-menu">
                 <img src="./images/hamburger.svg" alt="Open Menu" class="w-10 h-10" />
             </div>
+
+            <div id="mobile-auth" style="display: none">
+                <% if (isLoggedIn) { %>
+                    <button class="login-button">Account</button>
+                    <button class="signup-button">Logout</button>
+                <% } else { %>
+                    <button class="login-button" onclick="window.location.href='/auth?form=login'">Sign In</button>
+                    <button class="signup-button" onclick="window.location.href='/auth?form=register'">Register</button>
+                <% } %>
+            </div>
         </div>
     </nav>
 
