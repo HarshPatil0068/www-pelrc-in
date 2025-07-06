@@ -11,7 +11,7 @@ const sendInquiryEmail = async (req, res) => {
 
   try {
     await sendEmail({ name, email, message });
-    res.status(200).json({ message: "Email sent successfully" });onsole.log("Email successfully sent");
+    res.status(200).json({ message: "Email sent successfully" });
     
   } catch (err) {
     console.error("Contact form error:", err);
